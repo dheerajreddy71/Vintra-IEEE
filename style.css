@@ -177,7 +177,9 @@ footer p {
 
     .logo {
         height: 30px;
-        width: auto;
+        width: auto; /* Maintain aspect ratio */
+        max-width: 100px; /* Set a max-width to prevent enlargement */
+        object-fit: contain; /* Ensure logos fit within the specified dimensions */
     }
 
     h1 {
