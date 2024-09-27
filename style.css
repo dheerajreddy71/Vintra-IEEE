@@ -1,61 +1,306 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
+    background-color: #003366;
+    padding: 20px 0;
     text-align: center;
-    margin-bottom: 20px;
+    color: white;
+}
+
+footer {
+    background-color: #333333;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .logo-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    height: 50px;
+    margin: 0 10px;
+}
+
+h1 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.events-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .event {
-    margin: 20px;
-    border: 1px solid #ccc;
-    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 8px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+}
+
+.event:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 .event-details {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
 
 .event-image {
-    width: 250px; /* Increased image size */
+    max-width: 50%;
     height: auto;
-    margin-right: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .event-description {
-    flex: 1; /* Allow description to take up remaining space */
+    text-align: center;
 }
 
 .registration {
-    margin-top: 10px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .register-button {
     display: inline-block;
-    margin: 5px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     background-color: #007BFF;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    margin: 5px;
+    transition: background-color 0.3s;
 }
 
 .register-button:hover {
     background-color: #0056b3;
 }
 
-footer {
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Animations */
+@keyframes headerSlide {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInEvents {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInEventCard {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes footerSlide {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .events-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 40px;
+        margin: 5px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .event {
+        padding: 15px;
+    }
+
+    .register-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    .event-description {
+        font-size: 14px;
+    }
+
+    .register-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+.prize-section {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+}
+
+.prize-section:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.prizes-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added transition for hover effect */
+}
+
+.prize-item:hover {
+    transform: translateY(-5px); /* Lift the item up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+.medal {
+    font-size: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s; /* Added transition for hover effect */
+}
+
+.medal:hover {
+    transform: scale(1.2); /* Enlarge the medal on hover */
+}
+
+.gold-medal {
+    color: #FFD700;  /* Gold color */
+}
+
+.silver-medal {
+    color: #C0C0C0;  /* Silver color */
+}
+
+.bronze-medal {
+    color: #CD7F32;  /* Bronze color */
+}
+
+.prize-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .prize-item {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}
+.event-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.event-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.event-info i {
+    color: #007BFF; /* Customize the icon color as needed */
+    margin-right: 5px; /* Space between icon and text */
 }
