@@ -177,6 +177,7 @@ footer p {
 
     .logo {
         height: 30px;
+        width: auto;
     }
 
     h1 {
