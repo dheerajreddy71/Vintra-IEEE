@@ -170,13 +170,13 @@ footer p {
     }
 }
 
-/* Center IEEE CS and WIE logos on mobile devices */
+/* Adjust logo container on mobile devices */
 @media (max-width: 768px) {
     .logo-container {
         display: flex;
-        flex-direction: column; /* Stack logos vertically */
-        align-items: center; /* Center logos horizontally */
-        justify-content: center; /* Center logos vertically */
+        flex-direction: row; /* Align logos in a row */
+        justify-content: center; /* Center logos horizontally */
+        gap: 10px; /* Space between logos */
     }
 
     .logo {
@@ -184,7 +184,6 @@ footer p {
         width: auto; /* Maintain aspect ratio */
         max-width: 100px; /* Set a max-width to prevent enlargement */
         object-fit: contain; /* Ensure logos fit within the specified dimensions */
-        margin: 5px 0; /* Add margin for spacing between logos */
     }
 }
 
